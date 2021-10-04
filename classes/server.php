@@ -19,7 +19,11 @@ final class Server {
     private static function penultimo_id(){
         global $wpdb;
         $query = "SELECT ID FROM $wpdb->posts WHERE post_status = 'private' AND post_type = 'if-server-sent-event' ORDER BY ID DESC LIMIT 2";
-        return absint($wpdb->get_var($query, 0, 1));
+        $id = $wpdb->get_var($query, 0, 1);
+        if(is_null($id)){
+            $id = $wpdb->get_var($query);
+        }
+        return absint($id);
     }
 
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

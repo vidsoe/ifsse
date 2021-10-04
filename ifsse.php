@@ -12,7 +12,7 @@ Plugin URI: https://github.com/vidsoe/ifsse
 Requires at least: 5.6
 Requires PHP: 5.6
 Text Domain: ifsse
-Version: 0.9.29
+Version: 0.10.4
 */
 
 defined('ABSPATH') or die('Hi there! I\'m just a plugin, not much I can do when called directly.');
